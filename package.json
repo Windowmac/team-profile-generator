@@ -1,0 +1,25 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "A command-line program that generates an html page with entered team-members/positions/emails/etc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  },
+  "dependencies": {
+    "inquirer": "^8.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Windowmac/team-profile-generator.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Windowmac/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/Windowmac/team-profile-generator#readme"
+}
