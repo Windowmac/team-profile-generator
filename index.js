@@ -42,9 +42,9 @@ class Team {
         ;
     }
 
+
     this.manager = new Manager(await managerPrompt());
-    this.internList = Intern.prototype.buildInternList();
-    this.engineerList = Engineer.prototype.buildEngineerList();
+    this.internList = Intern.prototype.buildInternList(this);
     
   }
 }
@@ -66,7 +66,7 @@ class Engineer {
     this.email = email;
     this.gitHub = gitHub;
   }
-
+  
   buildEngineerList () {
     const engineerList = [];
 
@@ -115,6 +115,7 @@ class Engineer {
     engineerPrompt();
     return engineerList;
   }
+  
 }
 
 class Intern {
@@ -125,7 +126,7 @@ class Intern {
     this.school = school;
   }
 
-  buildInternList() {
+  buildInternList(team) {
     const internList = [];
 
     function internPrompt() {
@@ -163,6 +164,8 @@ class Intern {
             console.log(internList);
             if (answer.another) {
               internPrompt();
+            } else {
+              team.engineerList = Engineer.prototype.buildEngineerList();
             }
           },
           (err) => {
