@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
 const Manager = require('./Manager');
 const Intern = require('./Intern');
 const Engineer = require('./Engineer');
@@ -110,7 +111,16 @@ class Team {
     }
   
     buildHTML() {
-      console.log('first engineer role: ' + this.engineerList[0].getRole());
+      const pageTop = fs.readFileSync('./src/page-top.txt', 'utf8', err => {throw new Error(err);});
+      const pageBottom = fs.readFileSync('./src/page-bottom.txt', 'utf8', err => {throw new Error(err);});
+      const managerCard = this.manager.buildManagerCard();
+      const internCards = '';
+      const page = `${pageTop}\n
+              ${managerCard}\n
+              ${pageBottom}\n
+              `;
+      
+      fs.writeFileSync('./dist/new-team.html', page, 'utf8', err => {throw new Error(err);});
     }
   
     startBuild() {
