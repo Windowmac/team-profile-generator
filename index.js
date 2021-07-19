@@ -1,4 +1,4 @@
-const Team = require('./assets/js/Team');
+const Team = require('./db/Team');
 
 
 

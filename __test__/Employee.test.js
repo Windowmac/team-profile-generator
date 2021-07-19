@@ -1,4 +1,4 @@
-const Employee = require('../Employee');
+const Employee = require('../db/Employee');
 
 test('employee receives a name', () => {
     const employee = new Employee({name: 'Bjorn', id: '123', email: 'engine@email', role: 'Engineer'});

@@ -1,4 +1,4 @@
-const Manager = require('../Manager');
+const Manager = require('../db/Manager');
 
 test('manager receives a name', () => {
     const manager = new Manager({name: 'Bjorn', id: '123', email: 'manager@email.com', role: 'Manager', office: '42'});
