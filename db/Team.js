@@ -136,8 +136,8 @@ class Team {
 
       const page = `${pageTop}\n
                       ${managerCard}\n
-                      ${internCards.join('\n')}\n
                       ${engineerCards.join('\n')}\n
+                      ${internCards.join('\n')}\n
                     ${pageBottom}\n
                   `;
       

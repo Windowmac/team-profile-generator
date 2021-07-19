@@ -14,7 +14,7 @@ class Intern extends Employee {
         return `
         <div class="card col-3 intern-card">
           <div class="card-body">
-            <h5 class="card-title">${this.getName()}</h5>
+            <h5 class="card-title">${this.getName()} <i class="bi bi-emoji-expressionless"></i></h5>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">role: ${this.getRole()}</li>
                 <li class="list-group-item">ID: ${this.getId()}</li>
