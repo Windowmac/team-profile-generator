@@ -11,7 +11,7 @@ class Manager extends Employee {
     }
     buildManagerCard(){
       return `
-      <div class="card col-4 manager-card">
+      <div class="card col-3 manager-card">
         <div class="card-body">
           <h5 class="card-title">${this.getName()}</h5>
           <ul class="list-group list-group-flush">

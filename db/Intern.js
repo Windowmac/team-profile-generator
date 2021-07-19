@@ -12,7 +12,7 @@ class Intern extends Employee {
 
       buildInternCard(){
         return `
-        <div class="card col-4 intern-card">
+        <div class="card col-3 intern-card">
           <div class="card-body">
             <h5 class="card-title">${this.getName()}</h5>
               <ul class="list-group list-group-flush">

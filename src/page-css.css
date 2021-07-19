@@ -1,0 +1,17 @@
+.manager-card {
+    background-color: rgba(14, 138, 209, 0.548);
+}
+
+.intern-card {
+    background-color: rgba(242, 245, 107, 0.5);
+}
+
+.engineer-card {
+    background-color: rgba(53, 247, 137, 0.5);
+}
+
+.card {
+    padding: 10px;
+    margin: 15px;
+    margin-top: 22px;
+}

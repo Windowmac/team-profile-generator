@@ -12,6 +12,15 @@ class Team {
       this.internList = [];
     }
   
+    startBuild() {
+      const enterTeam = async() =>{
+        const managerAsnwers = await this.managerPrompt();
+        this.manager = new Manager(managerAsnwers);
+        this.buildLists();
+      }
+      enterTeam();
+    }
+
     async managerPrompt() {
       const managerInfo = await inquirer.prompt([
         {
@@ -115,12 +124,12 @@ class Team {
     buildHTML() {
       const pageTop = fs.readFileSync('./src/page-top.txt', 'utf8', err => {throw new Error(err);});
       const pageBottom = fs.readFileSync('./src/page-bottom.txt', 'utf8', err => {throw new Error(err);});
-      const managerCard = this.manager.buildManagerCard();
+      const pageCss = fs.readFileSync('./src/page-css.css', 'utf8', err => {throw new Error(err);});
 
+      const managerCard = this.manager.buildManagerCard();
       const internCards = this.internList.map(intern => {
         return intern.buildInternCard() + '\n';
       });
-
       const engineerCards = this.engineerList.map(engineer => {
         return engineer.buildEngineerCard() + '\n';
       });
@@ -133,16 +142,9 @@ class Team {
                   `;
       
       fs.writeFileSync('./dist/new-team.html', page, 'utf8', err => {throw new Error(err);});
+      fs.writeFileSync('./dist/new-team-css.css', pageCss, 'utf8', err => {throw new Error(err);});
     }
-  
-    startBuild() {
-      const enterTeam = async() =>{
-        const managerAsnwers = await this.managerPrompt();
-        this.manager = new Manager(managerAsnwers);
-        this.buildLists();
-      }
-      enterTeam();
-    }
+    
   }
 
   module.exports = Team;
