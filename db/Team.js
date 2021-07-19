@@ -116,18 +116,21 @@ class Team {
       const pageTop = fs.readFileSync('./src/page-top.txt', 'utf8', err => {throw new Error(err);});
       const pageBottom = fs.readFileSync('./src/page-bottom.txt', 'utf8', err => {throw new Error(err);});
       const managerCard = this.manager.buildManagerCard();
+
       const internCards = this.internList.map(intern => {
         return intern.buildInternCard() + '\n';
       });
+
       const engineerCards = this.engineerList.map(engineer => {
         return engineer.buildEngineerCard() + '\n';
       });
+
       const page = `${pageTop}\n
-              ${managerCard}\n
-              ${internCards.join('\n')}\n
-              ${engineerCards.join('\n')}\n
-              ${pageBottom}\n
-              `;
+                      ${managerCard}\n
+                      ${internCards.join('\n')}\n
+                      ${engineerCards.join('\n')}\n
+                    ${pageBottom}\n
+                  `;
       
       fs.writeFileSync('./dist/new-team.html', page, 'utf8', err => {throw new Error(err);});
     }
