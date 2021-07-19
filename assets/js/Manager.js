@@ -6,6 +6,9 @@ class Manager extends Employee {
       this.office = office;
     }
 
+    getOffice(){
+        return this.office;
+    }
     buildManagerCard(){}
   }
 
