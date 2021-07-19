@@ -1,12 +1,12 @@
-class Manager {
-    constructor({ name, id, email, office }) {
-      this.name = name;
-      this.id = id;
-      this.email = email;
+const Employee = require('./Employee');
+
+class Manager extends Employee {
+    constructor({ name, id, email, role, office }) {
+      super({name, id, email, role});
       this.office = office;
     }
-  
-    buildManagerCard() {}
+
+    buildManagerCard(){}
   }
 
   module.exports = Manager;

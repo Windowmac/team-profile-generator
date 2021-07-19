@@ -66,7 +66,7 @@ class Team {
             message: 'enter another engineer?',
           },
         ]);
-  
+        engineerInfo.role = 'Engineer';
         this.engineerList.push(new Engineer(engineerInfo));
         if (engineerInfo.another) return engineerPrompt();
         this.buildHTML();
@@ -100,6 +100,7 @@ class Team {
             message: 'enter another intern?',
           },
         ]);
+        internInfo.role = 'Intern';
         const newIntern = new Intern(internInfo);
         this.internList.push(newIntern);
         if (internInfo.another) return internPrompt();
@@ -109,7 +110,7 @@ class Team {
     }
   
     buildHTML() {
-      console.log('build it: ' + JSON.stringify(this));
+      console.log('first engineer role: ' + this.engineerList[0].getRole());
     }
   
     startBuild() {
