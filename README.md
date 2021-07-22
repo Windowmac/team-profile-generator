@@ -27,7 +27,7 @@
 
   ## Video
   ___
-  [![Demo Video](./assets/images/team-profile-generator.png)](https://drive.google.com/file/d/1Bo28-YtMDdoDkTENvXGym9olzIEDV1MI/view "Demo Video")
+  [![Demo Video](./assets/images/team-profile-generator-image.png)](https://drive.google.com/file/d/1Bo28-YtMDdoDkTENvXGym9olzIEDV1MI/view "Demo Video")
 
   ## Collaboration:
   ___
